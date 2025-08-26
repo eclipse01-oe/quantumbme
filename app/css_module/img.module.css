@@ -1,0 +1,5 @@
+.bmeImg{
+    width: min(300px, 40%);
+    margin: 20px 50% 0 30%;
+    opacity: 0.8;
+}

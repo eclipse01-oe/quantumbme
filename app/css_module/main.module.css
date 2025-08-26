@@ -1,0 +1,139 @@
+#cardHeader{
+    background: repeating-linear-gradient(45deg, blue, #000 40%);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-radius: 0 0 20% 0;
+}
+.cardHeader{
+    display: flex;
+    color: white;
+    height: 250px;
+    margin: 50px;
+}
+.header{
+    flex: 1;
+    padding: 30px 0 10px 20%;
+}
+.header h1{
+    font-size: min(60px, 10vw);
+    font-weight: 1000;
+}
+.btn{
+    border: 1px black solid;
+    padding: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+.header h3{
+    font-weight: 900;
+    font-size: min(30px, 6vw);
+}
+.header p:last-child{
+    transition: 5s ease-in-out;
+    animation: textAnim 5s ease-in-out,
+    borderAnim .8s ease-in-out infinite;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 140px;
+}
+
+@keyframes textAnim{
+    from{
+        width: 0;
+    }
+    to{
+        width: 140px;
+    }
+}
+
+@keyframes borderAnim{
+    0%{
+        border-right-width: 1px;
+    }
+    100%{
+       border: 0;
+    }
+}
+
+.highlight{
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.highlight div{
+    position: absolute;
+    height: min(200px, 100vh);
+    width: min(160px, 30vw);
+    background-color: skyblue;
+    color: black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 30px 4% 10px 20%;
+    transition: .5s ease-in-out;
+    font-size: min(16px, 4vw);
+}
+
+.transform {
+    transform: translateY(-200%) !important;
+}
+
+@keyframes animatePage {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+
+    }
+}
+
+.divAnimate {
+    animation: animatePage 1s ease-in-out;
+}
+
+@media (max-width: 730px) {
+    .header{
+        margin-left: -18%;
+    }
+    .highlight div{
+        margin-left: 0;
+    }
+}
+@media (max-width: 600px) {
+    .cardHeader{
+        margin: 30px;
+    }
+}
+@media (max-width: 562px){
+    .cardHeader{
+        margin: 30px 0;
+    }
+}
+
+@media(max-width: 450px){
+     @keyframes textAnim{
+        from{
+            width: 0;
+            font-size: 16px;
+        }
+        to{
+            font-size: 9px;
+            padding: 0;
+        }
+    }
+    .header p:last-child{
+        width: 120px;
+    }
+}
+
